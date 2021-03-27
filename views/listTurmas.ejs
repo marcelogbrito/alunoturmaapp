@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Turmas</title>
+</head>
+<body>
+  <h2>Lista de Turmas<h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <td>Nome</td>
+        <td>Curso</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% turmas.forEach(function(data) { %>
+        <tr>
+          <td><%= data.nome %></td>
+          <td><%= data.curso %></td>
+        </tr>
+     <% }) %>
+   </tbody>
+   <button><a href="/">Back</a></button>
+</body>
+</html>
