@@ -30,6 +30,27 @@
         </tr>
      <% }) %>
    </tbody>
+   </table>
+<tr>
+  <table border="1">
+    <thead>
+      <tr></tr>
+      </thead>
+      <tbody>
+        <% data.alunos.forEach(function(aluno) { %>
+          <tr>
+            <td><%= aluno.nome %></td>
+            <td><%= data.curso %></td>
+            <td><%= aluno.dataMatricula %></td>
+            <td>
+            #
+            </td>
+          </tr>
+       <% }) %>
+      </tbody>
+      </table>
+</tr>
+  
    <button><a href="/">Back</a></button>
    <script>
     function confirmation(msg, url) {

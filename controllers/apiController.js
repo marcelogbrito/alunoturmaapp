@@ -55,7 +55,7 @@ exports.delete = function (req, res, next) {
     dataInicio: dtini
   };
    Turma.create(data).then(function(turma){
-    res.redirect('/api/listall');
+    res.redirect('/api/listalunos');
     }).catch(next);
   };
 
@@ -65,3 +65,11 @@ exports.listAllTurmas = function (req, res, next) {
       res.render('listTurmas', {turmas: turma});
     }).catch(next);
   };
+
+  exports.alunos = function(req, res, next) {
+    Turma.find({_id: req.params.id},
+      req.body).then(function(turma){
+
+    res.render('listAlunos',{turmas: turma});
+}).catch(next);
+  }

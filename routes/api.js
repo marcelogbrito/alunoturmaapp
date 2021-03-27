@@ -17,10 +17,13 @@ router.put('/turma/:id',apiController.update);
 router.delete('/turma/:id',apiController.delete);
 // listar todos os pontos de interesse da BD
 router.get('/listall',apiController.listAllTurmas);
+router.get('/listalunos/:id',apiController.alunos);
 // atualizar ponto de interesse
 router.post('/update/:id',apiController.update);
 // apagar ponto de interesse
 router.get('/delete/:id',apiController.delete);
+
+router.get('/alunos/:id',apiController.alunos);
 
 
 
