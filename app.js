@@ -36,7 +36,7 @@ app.use(function(err, req, res, next){
 
 // servidor á escuta no porto 5000
 // 'process.env.port': caso usemos Heroku
-app.listen(process.env.port || port, () =>{
+app.listen(process.env.PORT || port, () =>{
   console.log('Servidor em execução no porto: '+ port);
 });
 
