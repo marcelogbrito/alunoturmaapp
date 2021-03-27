@@ -20,23 +20,26 @@ exports.details = function (req, res) {
   exports.add = function (req, res) {
     res.send({type: 'POST'});
   };
- // atualiza ‘pi’ da BD com as propriedades em ‘req.body’
-// depois, procura de novo na BD o ‘pi’ atualizado (senão manda o pi // não atualizado!)
-// depois, devolve o ‘pi’ atualizado ao cliente
-exports.update = function (req, res, next) {
-    Turma.findByIdAndUpdate({_id: req.params.id},
-                     req.body).then(function(){
-      Turma.findOne({_id: req.params.id}).then(function(turma){
-        res.send(turma);
-      });
+// listar um ponto de interesse por id (para editar)
+exports.edit = function (req, res, next) {
+    Turma.findOne({_id: req.params.id}).then(function(turma){
+      res.render('editTurma', {turma: turma});
     }).catch(next);
- };
+  };
+  // atualiza 'pi' da BD com os valores do formulário
+  exports.update = function (req, res, next) {
+   Turma.findByIdAndUpdate({_id: req.params.id},
+        req.body).then(function(){
+      res.redirect('/api/listall');
+  }).catch(next);
+  };
   // ‘_id:’->nome da propriedade na BD, 
 // ‘req.params.id’->devolve-me o parametro id na req
 exports.delete = function (req, res, next) {
-    // apaga ‘pi’ da BD, depois, devolve o ‘pi’ apagado ao cliente
-    Turma.findByIdAndRemove({_id: req.params.id}).then(function(turma){
-      res.send(turma);
+    // 'req.params.id'->devolve-me o parametro id na req
+    Turma.findOneAndDelete({_id: req.params.id}).then(function(pi){
+      console.log("Registo eliminado com sucesso!");
+      res.redirect('/api/listall');
     }).catch(next);
   };
 

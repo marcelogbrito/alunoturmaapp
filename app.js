@@ -40,7 +40,7 @@ app.listen(process.env.PORT || port, () =>{
   console.log('Servidor em execução no porto: '+ port);
 });
 
-mongoose.connect("mongodb+srv://semana:semana@cluster0.wylzd.mongodb.net/curso?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://semana:semana@cluster0.wylzd.mongodb.net/turmasalunos?retryWrites=true&w=majority");
 // Confirma ligação na consola
 mongoose.connection.on('connected', function () {
   console.log('Connected to Database test');

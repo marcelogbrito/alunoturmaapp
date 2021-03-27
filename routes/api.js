@@ -9,13 +9,20 @@ router.get('/teste', apiController.test);
 // TODO: listar pontos de interesse da BD
 router.get('/details',apiController.details);
 // TODO: adicionar novo ponto de interesse
-router.post('/turma',apiController.add);
+router.post('/turma',apiController.create);
 // TODO: atualizar ponto de interesse
 router.put('/turma/:id',apiController.update);
 // TODO: apagar ponto de interesse
 router.delete('/turma/:id',apiController.delete);
 // listar todos os pontos de interesse da BD
 router.get('/listall',apiController.listAllTurmas);
+// atualizar ponto de interesse
+router.post('/update/:id',apiController.update);
+// apagar ponto de interesse
+router.get('/delete/:id',apiController.delete);
+
+
+
 module.exports = router;
 
 

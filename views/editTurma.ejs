@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Turma</title>
+</head>
+<body>
+<h2>Edit</h2>
+  <form action="/api/update/<%= turma._id %>" method="POST">
+    <input type="text" value="<%= turma.nome %>" name="nome">
+    <input type="text" value="<%= turma.curso %>" name="curso">
+    <br />
+    <button><a href="/api/listall">List All</a></button>
+    <button type="submit">Edit</button>
+  </form>
+</body>
+</html>
