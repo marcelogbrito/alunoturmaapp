@@ -8,6 +8,7 @@ const apiController = require('../controllers/apiController');
 router.get('/teste', apiController.test);
 // TODO: listar pontos de interesse da BD
 router.get('/details',apiController.details);
+router.get('/edit/:id',apiController.edit);
 // TODO: adicionar novo ponto de interesse
 router.post('/turma',apiController.create);
 // TODO: atualizar ponto de interesse

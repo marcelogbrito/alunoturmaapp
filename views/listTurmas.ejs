@@ -11,6 +11,7 @@
       <tr>
         <td>Nome</td>
         <td>Curso</td>
+        <td>Data Inicio</td>
         <td>#</td>
       </tr>
     </thead>
@@ -19,6 +20,7 @@
         <tr>
           <td><%= data.nome %></td>
           <td><%= data.curso %></td>
+          <td><%= data.dataInicio %></td>
           <td><a href="/api/edit/<%= data._id %>">Edit</a> | 
             <a href="/api/delete/<%= data._id %>">Delete</a></td>
         </tr>

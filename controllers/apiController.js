@@ -48,9 +48,11 @@ exports.delete = function (req, res, next) {
       // inicializar variaveis com os valores do 'req.body'
   let nm = req.body.nome;
   let cr = req.body.curso;
+  let dtini = req.body.dataInicio;
   let data = {
     nome: nm,
     curso: cr,
+    dataInicio: dtini
   };
    Turma.create(data).then(function(turma){
     res.redirect('/api/listall');
